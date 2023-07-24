@@ -1,9 +1,15 @@
 const gridContainer = document.querySelector(".grid-container");
+const clearButton = document.querySelector(".clear-button");
 const rangeValue = document.querySelector(".input-value");
 const rangeSlider = document.querySelector("#myRange");
 
 rangeValue.innerText = `${rangeSlider.value} x ${rangeSlider.value}`;
 rangeSlider.oninput = sliderChange;
+
+function clear() {
+  gridContainer.innerHTML = "";
+  makeRows(rangeSlider.value, rangeSlider.value);
+}
 
 function sliderChange() {
   makeRows(rangeSlider.value, rangeSlider.value);
@@ -25,3 +31,5 @@ function makeRows(rows, cols) {
   }
 }
 makeRows(rangeSlider.value, rangeSlider.value);
+
+clearButton.addEventListener("click", clear);
