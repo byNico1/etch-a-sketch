@@ -1,0 +1,33 @@
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.item {
+  /* width: 10px; */
+  background-color: red;
+}
+
+.grid-container {
+  display: grid;
+  width: 500px;
+  height: 500px;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
+.grid-item {
+  user-select: none;
+  border: 1px solid grey;
+  background-color: rgb(255, 255, 255);
+}
