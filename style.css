@@ -19,14 +19,28 @@ body {
 
 .container {
   width: 70%;
-  margin-top: 40px;
+  margin: 40px 0;
   margin-inline: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
+.btn {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #ff6f006b;
+}
+
 .options {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  flex-direction: column;
   min-width: 300px;
 }
 

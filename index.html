@@ -14,11 +14,16 @@
         <section class="options">
             <h2>Color Picker</h2>
             <div>
-                <p class="input-value"></p>
+                <input type="color" id="customColor" name="color" value="#000000">
+                <label for="color">Custom Color</label>
+            </div>
+            <button class="clear-button btn">Clear</button>
+            <button class="random-color btn">Random Color</button>
+            <!-- grid config -->
+            <div>
+                <p>grid value: <span class="input-value"></span></p>
                 <input type="range" min="1" max="100" value="16" class="slider" id="myRange">
             </div>
-            <button class="clear-button">Clear</button>
-            <button class="clear-button">Custom Color</button>
         </section>
 
         <main>
