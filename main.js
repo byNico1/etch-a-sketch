@@ -15,6 +15,10 @@ customColor.addEventListener("input", customColorF);
 let mode = "random";
 let globalColor;
 
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
+
 function customColorF(e) {
   mode = "custom";
   globalColor = e.target.value;
@@ -30,8 +34,9 @@ function sliderChange() {
   rangeValue.innerText = `${rangeSlider.value} x ${rangeSlider.value}`;
 }
 
-function colorChange() {
+function colorChange(e) {
   let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  if (e.type === "mouseover" && !mouseDown) return;
   if (mode === "random") {
     this.style.backgroundColor = randomColor;
   } else {
@@ -44,7 +49,7 @@ function makeRows(rows, cols) {
   gridContainer.style.setProperty("--grid-cols", cols);
   for (let c = 0; c < rows * cols; c++) {
     let cell = document.createElement("div");
-    cell.addEventListener("click", colorChange);
+    cell.addEventListener("mouseover", colorChange);
     gridContainer.appendChild(cell).className = "grid-item";
   }
 }
